@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Mail, Lock, LogIn } from "lucide-react";
+import { User, Lock, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -15,11 +15,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { login } from "@/lib/api";
 
 export default function LoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -30,9 +29,17 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const data = await login(email, password);
-      localStorage.setItem("token", data.jwt);
-      router.push("/dashboard");
+      // Hardcoded credentials check
+      if (username === "metesahankurt" && password === "199419033Mm.") {
+         // Simulate network delay for better UX
+        await new Promise(resolve => setTimeout(resolve, 500));
+        localStorage.setItem("token", "hardcoded-session-token");
+        router.push("/dashboard");
+      } else {
+         // Simulate network delay for better UX
+        await new Promise(resolve => setTimeout(resolve, 500));
+        throw new Error("Invalid username or password");
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Login failed");
     } finally {
@@ -57,16 +64,16 @@ export default function LoginPage() {
               </div>
             )}
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="username">Username</Label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                <User className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                 <Input
-                  id="email"
-                  type="email"
-                  placeholder="you@example.com"
+                  id="username"
+                  type="text"
+                  placeholder="Enter your username"
                   className="pl-10"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                   required
                 />
               </div>
