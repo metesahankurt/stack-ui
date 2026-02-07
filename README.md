@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="public/logo.png" alt="StackUI Logo" width="120" height="120">
   
   # StackUI
   
