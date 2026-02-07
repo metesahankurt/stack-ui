@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Sparkles, ExternalLink } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { aceternityRegistry } from "@/lib/aceternity-registry";
+import { aceternityRegistry } from "@/lib/registries/aceternity";
 
 export default function AceternityPage() {
   return (

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
-import { DashboardSidebar } from "@/components/dashboard-sidebar";
+import { DashboardSidebar } from "@/components/layout/dashboard-sidebar";
 import { Separator } from "@/components/ui/separator";
 
 export default function DashboardLayout({
@@ -35,7 +35,7 @@ export default function DashboardLayout({
           <SidebarTrigger className="-ml-1" />
           <Separator orientation="vertical" className="mr-2 h-4" />
         </header>
-        <main className="flex-1 p-6">{children}</main>
+        <main className="flex-1 p-4 sm:p-6">{children}</main>
       </SidebarInset>
     </SidebarProvider>
   );

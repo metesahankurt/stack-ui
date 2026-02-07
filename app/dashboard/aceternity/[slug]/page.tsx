@@ -6,7 +6,7 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { aceternityRegistry } from "@/lib/aceternity-registry";
+import { aceternityRegistry } from "@/lib/registries/aceternity";
 
 export default function AceternityComponentPage({
   params,

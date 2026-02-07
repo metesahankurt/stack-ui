@@ -1,9 +1,10 @@
-import { type ComponentType } from "react";
 
 export interface ComponentEntry {
   slug: string;
   name: string;
   description: string;
+  installCommand?: string;
+  code?: string;
 }
 
 export const componentRegistry: ComponentEntry[] = [
