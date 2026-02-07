@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, Layers } from "lucide-react";
+import Image from "next/image";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -26,9 +27,16 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <Layers className="h-6 w-6 text-primary" />
-          <span className="text-lg font-semibold tracking-tight">Acme</span>
+        <Link href="/" className="flex items-center">
+          <div className="relative h-32 w-32">
+            <Image 
+              src="/logo.png" 
+              alt="StackUI" 
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
         </Link>
 
         {/* Desktop Nav */}
@@ -66,9 +74,15 @@ export function Navbar() {
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="w-72">
-            <SheetTitle className="flex items-center gap-2 px-1">
-              <Layers className="h-5 w-5 text-primary" />
-              <span className="font-semibold">Acme</span>
+            <SheetTitle className="flex items-center px-1">
+              <div className="relative h-24 w-24">
+                <Image 
+                  src="/logo.png" 
+                  alt="StackUI" 
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </SheetTitle>
             <nav className="mt-8 flex flex-col gap-1">
               {navLinks.map((link) => (

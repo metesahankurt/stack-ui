@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
@@ -8,7 +9,6 @@ import {
   Sparkles,
   Settings,
   LogOut,
-  Layers,
 } from "lucide-react";
 import {
   Sidebar,
@@ -61,14 +61,13 @@ export function DashboardSidebar() {
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
               <Link href="/dashboard">
-                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                  <Layers className="size-4" />
-                </div>
-                <div className="flex flex-col gap-0.5 leading-none">
-                  <span className="font-semibold">Acme</span>
-                  <span className="text-xs text-muted-foreground">
-                    Dashboard
-                  </span>
+                <div className="relative h-32 w-32">
+                  <Image 
+                    src="/logo.png" 
+                    alt="StackUI" 
+                    fill
+                    className="object-contain"
+                  />
                 </div>
               </Link>
             </SidebarMenuButton>

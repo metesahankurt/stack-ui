@@ -8,6 +8,7 @@ import {
   Globe,
   CheckCircle2,
 } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -32,13 +33,13 @@ export default function Home() {
             Now in public beta
           </Badge>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            Build products that
+            Beautiful UI Components
             <br />
-            <span className="text-muted-foreground">people love</span>
+            <span className="text-muted-foreground">Ready to Copy & Paste</span>
           </h1>
           <p className="mx-auto max-w-xl text-lg leading-relaxed text-muted-foreground">
-            A modern platform to ship faster, iterate smarter, and scale with
-            confidence. Everything you need, nothing you don&apos;t.
+            Explore and preview stunning UI components from shadcn/ui and Aceternity UI. 
+            Copy-paste ready components for your next project.
           </p>
           <div className="flex items-center justify-center gap-4 pt-2">
             <Button size="lg" asChild>
@@ -208,7 +209,7 @@ export default function Home() {
             Ready to get started?
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Join thousands of teams already using Acme to build better products.
+            Join thousands of developers using StackUI to build beautiful interfaces.
           </p>
           <div className="mt-8 flex items-center justify-center gap-4">
             <Button size="lg" asChild>
@@ -228,12 +229,18 @@ export default function Home() {
       <footer className="border-t py-12">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <div className="flex items-center gap-2">
-              <Layers className="h-5 w-5 text-primary" />
-              <span className="font-semibold">Acme</span>
+            <div className="flex items-center">
+              <div className="relative h-32 w-32">
+                <Image 
+                  src="/logo.png" 
+                  alt="StackUI" 
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </div>
             <p className="text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} Acme. All rights reserved.
+              &copy; {new Date().getFullYear()} StackUI. All rights reserved.
             </p>
           </div>
         </div>
