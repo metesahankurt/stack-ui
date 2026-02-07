@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
   Component,
+  Sparkles,
   Settings,
   LogOut,
   Layers,
@@ -32,6 +33,11 @@ const navItems = [
     title: "shadcn/ui",
     href: "/dashboard/shadcn",
     icon: Component,
+  },
+  {
+    title: "Aceternity UI",
+    href: "/dashboard/aceternity",
+    icon: Sparkles,
   },
   {
     title: "Settings",
